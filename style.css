@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+}
+
+#cards {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-gap: 30px;
+}
+
+.card {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+#input {
+    margin: 10px;
+}
+
+.correct {
+    background-color: lightgreen;
+    margin: 0;
+}

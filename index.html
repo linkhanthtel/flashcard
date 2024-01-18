@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Vue App</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Flash Card</h1>
+        <p v-if="completed">Nice! You have completed all the words!</p>
+        <p v-else>You have answered {{ correctCount }} out of {{ wordCount }}</p>
+        <div id="cards">
+            <div 
+                class="card" 
+                v-for="word in shuffleWords" 
+                v-bind:class="{ correct : word.correct}">
+                {{ word.wordA }}
+                <input v-if="!word.correct" type="text" id="input" v-model="word.answer" v-on:keyup.enter="checkAnswer(word)">
+                <p v-else>{{ word.answer }}</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="index.js"></script>
+
+</body>
+</html>
